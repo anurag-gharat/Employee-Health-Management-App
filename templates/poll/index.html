@@ -1,1 +1,12 @@
-poll
+{% extends 'base.html' %}
+{% block content %}
+
+    {% if latest_question_list %}
+    {% for question in latest_question_list %}
+    <h1 class="text-center m-5">{{question.question_text}}</h1>
+    {% endfor %}
+    {% else %}
+    <h2>No questions</h2>
+    {% endif %}
+
+{% endblock %}

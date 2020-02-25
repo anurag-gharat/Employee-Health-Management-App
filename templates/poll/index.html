@@ -3,7 +3,15 @@
 
     {% if latest_question_list %}
     {% for question in latest_question_list %}
-    <h1 class="text-center m-5">{{question.question_text}}</h1>
+    <div class="card">
+        <div class="card-title">
+            <h1 class="text-center m-5">{{question.question_text}}</h1>
+            <div class="card-body">
+                <a href="{% url 'poll:detail' question.id %}" class="btn btn-primary">VoteNow</a>
+            </div>
+        </div>
+    </div>
+    
     {% endfor %}
     {% else %}
     <h2>No questions</h2>

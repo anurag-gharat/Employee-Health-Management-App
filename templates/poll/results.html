@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<h1 class="text-center">
+    {{%  question.question_text %}}
+</h1>
+<ul>
+    {% for choice in question.choice_text.all %}
+    
+        <li>
+            {{ choice.choice_text }}
+            <span class="badge badge-success float-right">{{choice.votes}} vote{{ choice.votes | pluralize }}</span>
+        </li>
+      
+    
+    
+    {% endfor %}
+</ul>
+<a href="{% url 'poll:index' %}" class="btn btn-primary">back to Polls</a>
+
+<a href="{% url 'poll:detail' %}" class="btn btn-primary">Vote again?</a>
+
+
+{% endblock %}

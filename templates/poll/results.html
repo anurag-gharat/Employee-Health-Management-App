@@ -2,7 +2,7 @@
 {% block content %}
 
 <h1 class="text-center">
-    {{%  question.question_text %}}
+    {{  question.question_text }}
 </h1>
 <ul>
     {% for choice in question.choice_text.all %}
@@ -16,7 +16,7 @@
     
     {% endfor %}
 </ul>
-<a href="{% url 'poll:index' %}" class="btn btn-primary">back to Polls</a>
+
 
 <a href="{% url 'poll:detail' %}" class="btn btn-primary">Vote again?</a>
 
